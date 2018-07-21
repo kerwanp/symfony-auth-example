@@ -8,7 +8,7 @@ Here is the pipeline for getting an access to the api resources.
 
 * Register a new user account
 ```http request
-POST /register HTTP1/1
+POST /register
     ?username={}
     &firstname={}
     &lastname={}
@@ -17,32 +17,31 @@ Content-Type: application/json
 
 HTTP1/1 200 OK
 Content-Type: application/json
-User: {}
+user: {}
 ```
 
 * Login with the new account
 ```http request
-POST /login HTTP1/1
+POST /login
     ?email={}
     &password={}
 Content-Type: application/json
 
 HTTP1/1 200 OK
 Content-Type: application/json
-{
-    token: {},
-    expiresIn: {},
-}
+token: {}
+expiresIn: {}
+
 ```
 
 * Use this generate token for accessing resources
 ```http request
-GET /user HTTP1/1
+GET /user
 X-Auth-Token: {}
 
 HTTP1/1 200 OK
 Content-Type: application/json
-User: {}
+user: {}
 ```
 
 # How to do that ?
